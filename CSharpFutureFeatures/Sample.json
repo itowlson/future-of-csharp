@@ -1,0 +1,33 @@
+﻿{
+  "penguins" : [
+	{
+	  "name" : "Ernesto",
+	  "species" : "Adelie",
+	  "eggs" : [
+		{
+		  "laid" : "2014-01-23",
+		  "texture" : "chalky"
+		},
+		{
+		  "laid" : "2014-01-18",
+		  "texture" : "guano"
+		}
+	  ]
+	},
+	{
+	  "name" : "Prudence",
+	  "species" : "Little Blue"
+	},
+	{
+	  "name" : "Gloria",
+	  "species" : "Adelie",
+	  "eggs" : [
+		{
+		  "laid" : "2013-11-17",
+		  "texture" : "smooth"
+		}
+	  ]
+	},
+  ],
+  "walruses" : []
+}
