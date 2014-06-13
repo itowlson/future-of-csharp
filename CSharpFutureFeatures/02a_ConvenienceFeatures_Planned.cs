@@ -132,4 +132,19 @@ namespace CSharpFutureFeatures
             }
         }
     }
+
+    public class InvariantMethodAttribute(string methodName) : Attribute
+    {
+        public string MethodName { get; } = methodName;
+    }
+
+    [InvariantMethod("CheckIntegrity")]  // boo
+    //[InvariantMethod(nameof(CheckIntegrity))]  // safer
+    public class ClassWithAnInvariant
+    {
+        public void CheckIntegrity()
+        {
+            throw new InvalidOperationException("This class has no integrity");
+        }
+    }
 }

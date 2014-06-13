@@ -55,6 +55,9 @@ namespace CSharpFutureFeatures
         public long DownloadSize { get; } = downloadSize;
         public string Name { get; } = name;
 
+        // Planned: 'initialisation scope'
+        //private long downloadSize = downloadSize;
+
         //public long GetEstimatedDownloadTime(long transferRate)
         //{
         //    return downloadSize / transferRate;
@@ -66,6 +69,24 @@ namespace CSharpFutureFeatures
 
     public class FileTransferCS6(long totalBytes)
     {
+        // PLANNED
+        //[field: NonSerialized]  // refers to backing field
         public long BytesRemaining { get; set; } = totalBytes;
     }
+
+    // Forthcoming: primary constructor body
+
+    public class TextElement(string text)
+    {
+        // constructor body
+
+        //{
+        //    if (text == null)
+        //    {
+        //        throw new ArgumentNullException("text");
+        //    }
+        //}
+    }
+
+
 }

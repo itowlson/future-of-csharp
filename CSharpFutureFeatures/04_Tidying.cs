@@ -113,6 +113,12 @@ namespace CSharpFutureFeatures
         }
     }
 
+    ////////////////////////////////////////////////////////////////////
+    //
+    // private protected has been withdrawn
+    //
+    ////////////////////////////////////////////////////////////////////
+
     public class VisibilityDemo
     {
         // Existing - equivalent to FamORAssem

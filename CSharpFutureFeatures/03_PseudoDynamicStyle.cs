@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 
 namespace CSharpFutureFeatures
 {
+    ///////////////////////////////////////////////////////////////////////
+    //
+    // .$ syntax is being withdrawn
+    //
+    ///////////////////////////////////////////////////////////////////////
+
     public static class WildlifeRepository
     {
         public static void StringIndexerShortcut()
