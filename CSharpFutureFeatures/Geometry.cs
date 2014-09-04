@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Console;
 using System.Linq;
 using System.Math;
 using System.Text;
@@ -12,6 +13,8 @@ namespace CSharpFutureFeatures
         public double X { get; } = x;
         public double Y { get; } = y;
 
+        public static Point Origin { get; } = new Point(0, 0);
+
         public Point Add(Vector delta) => new Point(X + delta.X, Y + delta.Y);
         public static Point operator +(Point pt, Vector delta) => pt.Add(delta);
 
@@ -22,6 +25,8 @@ namespace CSharpFutureFeatures
         public static Vector operator -(Point pt1, Point pt2) => pt1.Subtract(pt2);
 
         public double Distance(Point other) => (this - other).Length;
+
+        public void Print() => WriteLine("({0}, {1})", X, Y);
     }
 
     public struct Vector(double x, double y)
@@ -38,6 +43,7 @@ namespace CSharpFutureFeatures
         public static Vector operator -(Vector vector) => vector * -1;
 
         public double Length => Sqrt(X * X + Y * Y);
+
         public double Dot(Vector other) => X * other.X + Y * other.Y;
         public double Angle(Vector other) => Acos(this.Dot(other) / (this.Length * other.Length));
     }
