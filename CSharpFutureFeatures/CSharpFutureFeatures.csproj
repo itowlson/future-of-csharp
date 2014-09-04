@@ -10,6 +10,7 @@
     <RootNamespace>CSharpFutureFeatures</RootNamespace>
     <AssemblyName>CSharpFutureFeatures</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <LangVersion>Experimental</LangVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -48,8 +49,7 @@
   <ItemGroup>
     <Compile Include="02a_ConvenienceFeatures_Planned.cs" />
     <Compile Include="02_ConvenienceFeatures.cs" />
-    <Compile Include="03_PseudoDynamicStyle.cs" />
-    <Compile Include="04_Tidying.cs" />
+    <Compile Include="03_Tidying.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="01_SimplifiedClasses.cs" />

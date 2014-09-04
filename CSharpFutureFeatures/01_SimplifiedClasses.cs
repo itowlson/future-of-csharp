@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,45 +48,64 @@ namespace CSharpFutureFeatures
         public long BytesRemaining { get; set; }
     }
 
+    public class RetryHandlerCS5
+    {
+        public RetryHandlerCS5()
+        {
+            RetryCount = 3;
+        }
+
+        public int RetryCount { get; set; }
+    }
+
     // After
+
+    public class RetryHandlerCS6
+    {
+        public int RetryCount { get; set; } = 3;
+    }
+
+    public class RetryHandlerCS6_ReadOnly
+    {
+        public int RetryCount { get; } = 3;
+
+        // PLANNED
+        //public RetryHandlerCS6_ReadOnly(int retryCount)
+        //{
+        //    RetryCount = retryCount;  // initialise RO autoproperty's backing field from within ctor
+        //}
+    }
 
     public class ProductCS6(int id, long downloadSize, string name)  // primary constructor
     {
         public int Id { get; } = id;  // get-only auto property, auto property initialiser
-        public long DownloadSize { get; } = downloadSize;
         public string Name { get; } = name;
 
-        // Planned: 'initialisation scope'
-        //private long downloadSize = downloadSize;
+        private long downloadSize = downloadSize;  // field initialiser
 
-        //public long GetEstimatedDownloadTime(long transferRate)
-        //{
-        //    return downloadSize / transferRate;
-        //}
+        // expression-bodied method
+        public long GetEstimatedDownloadTime(long transferRate) => downloadSize / transferRate;
 
-        // PLANNED
-        //public long GetEstimatedDownloadTime(long transferRate) => downloadSize / transferRate;
+        // expression-bodied property
+        public string CobolId => Id.ToString("D10", CultureInfo.InvariantCulture);
     }
 
     public class FileTransferCS6(long totalBytes)
     {
         // PLANNED
-        //[field: NonSerialized]  // refers to backing field
+        // [field: NonSerialized]  // refers to backing field
         public long BytesRemaining { get; set; } = totalBytes;
     }
 
-    // Forthcoming: primary constructor body
-
     public class TextElement(string text)
     {
-        // constructor body
-
-        //{
-        //    if (text == null)
-        //    {
-        //        throw new ArgumentNullException("text");
-        //    }
-        //}
+        // primary constructor body
+        {
+            if (text == null)
+            {
+                throw new ArgumentNullException("text");
+            }
+        }
     }
 
 

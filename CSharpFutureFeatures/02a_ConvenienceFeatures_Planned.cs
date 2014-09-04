@@ -8,6 +8,18 @@ namespace CSharpFutureFeatures
 {
     public static class Planned
     {
+        //public static Dictionary<int, double> PrecalculateSines()
+        //{
+        //    return new Dictionary<int, double>
+        //    {
+        //        [0] = 0,
+        //        [30] = 0.5,
+        //        [45] = Math.Sqrt(2) / 2,
+        //        [60] = Math.Sqrt(3) / 2,
+        //        [90] = 1,
+        //    };
+        //}
+
         public static bool WillFirstNameFitInDB(Customer customer)
         {
             // Before
