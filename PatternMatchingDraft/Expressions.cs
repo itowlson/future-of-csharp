@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace PatternMatchingDraft
 {
+    // NOTE: THIS IS NOT PLANNED FOR C# vNext.  IT MAY NEVER HAPPEN
+    // AT ALL.  NOTHING HERE INDICATES MICROSOFT'S INTENT TO INCLUDE
+    // THESE FEATURES IN ANY FUTURE VERSION OF THE LANGUAGE.  BUT IT
+    // WOULD BE RUDE NOT TO MENTION THAT THESE FEATURES *DO*
+    // EXIST IN F# RIGHT NOW.  PATTERN MATCHING AND ACTIVE PATTERNS.
+    // YOU CAN LOOK 'EM UP.  THEY'RE PRETTY SWEET.
+
     abstract class Expr;
     record class X() : Expr;
     record class Const(double Value) : Expr;

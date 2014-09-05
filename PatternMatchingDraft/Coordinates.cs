@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace PatternMatchingDraft
 {
+    // NOTE: THIS IS NOT PLANNED FOR C# vNext.  IT MAY NEVER HAPPEN
+    // AT ALL.  NOTHING HERE INDICATES MICROSOFT'S INTENT TO INCLUDE
+    // THESE FEATURES IN ANY FUTURE VERSION OF THE LANGUAGE.  PLEASE
+    // STOP CHEWING MY LEG, MR LAWYER.
+    
     // Record class - plain old data + automatically matchable
 
     public record class Cartesian(double x: X, double y: Y);
