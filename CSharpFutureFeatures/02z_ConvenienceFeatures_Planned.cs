@@ -8,8 +8,24 @@ namespace CSharpFutureFeatures
 {
     public static class Planned
     {
+        public static Dictionary<int, double> PrecalculateSines()
+        {
+            // Before
+
+            return new Dictionary<int, double>
+            {
+                { 0,  0 },
+                { 30, 0.5 },
+                { 45, Math.Sqrt(2) / 2 },
+                { 60, Math.Sqrt(3) / 2 },
+                { 90, 1 },
+            };
+        }
+
         //public static Dictionary<int, double> PrecalculateSines()
         //{
+        //    // PLANNED - indexer-style initialisation syntax
+        //
         //    return new Dictionary<int, double>
         //    {
         //        [0] = 0,
