@@ -20,38 +20,6 @@ namespace CSharpFutureFeatures
         //    };
         //}
 
-        public static bool WillFirstNameFitInDB(Customer customer)
-        {
-            // Before
-
-            if (customer == null)
-            {
-                return true;
-            }
-            if (customer.Name == null)
-            {
-                return true;
-            }
-            if (customer.Name.First == null)
-            {
-                return true;
-            }
-
-            return customer.Name.First.Length < 8;  // Probably an Oracle database then
-
-            // PLANNED - null propagation
-            // "violating the Law of Demeter faster and more conveniently than ever before"
-
-            // int? firstNameLength = customer?.Name?.First?.Length;
-            // return firstNameLength.GetValueOrDefault() < 8;
-
-            // or
-            // int? firstNameLength = customer?.Name.First.Length;  // because if customer is null...
-            // See design discussion at http://roslyn.codeplex.com/discussions/540883
-
-            // customer?.SendStroppyEmail();
-        }
-
         public static Customer MakeBellicoseCustomer(Name name)
         {
             var customer = new Customer
@@ -94,39 +62,6 @@ namespace CSharpFutureFeatures
         private static void EverybodyHideUnderTheDesk() { }
     }
 
-    public class Customer
-    {
-        public Name Name { get; set; }
-
-        public void SendStroppyEmail() { }
-
-        public event EventHandler StroppyEmailAcknowledged;
-
-        protected virtual void OnStroppyEmailAcknowledged()
-        {
-            var handler = StroppyEmailAcknowledged;
-            if (handler != null)
-            {
-                handler(this, EventArgs.Empty);
-            }
-
-            // PLANNED - null propagation
-            // StroppyEmailAcknowledged?.Invoke(this, EventArgs.Empty);
-        }
-
-        public string FullName
-        {
-            get
-            {
-                // Before
-                return String.Format("{0} {1}", Name.First, Name.Last);
-
-                // MAYBE ("possibly") - string interpolation
-                // return "\{Name.First} \{Name.Last}";
-            }
-        }
-    }
-
     public class Name
     {
         public string First { get; set; }
@@ -140,7 +75,7 @@ namespace CSharpFutureFeatures
                 return String.Format("{0} {1}", First, Last);
 
                 // MAYBE ("possibly") - string interpolation
-                // return "\{First} \{Last}";
+                // return $"{First} {Last}";
             }
         }
     }

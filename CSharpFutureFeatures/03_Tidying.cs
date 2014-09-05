@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -70,6 +71,24 @@ namespace CSharpFutureFeatures
             // if hello.txt not found then no need to rethrow
         }
 
+        // This is an abuse of the exception filter feature
+        // but the C# team winks at it
+        public static void UseExceptionFiltersForLogging()
+        {
+            try
+            {
+                File.ReadAllText("hello.txt");
+                File.ReadAllText("goodbye.txt");
+            }
+            catch (Exception ex) if (Log(ex)) { }
+        }
+
+        private static bool Log(Exception ex)
+        {
+            Trace.WriteLine(ex.ToString());  // classy
+            return false;  // never "match" this filter - we only want it for its side effects
+        }
+
         public static void TupleMe()
         {
             // Before
@@ -111,24 +130,5 @@ namespace CSharpFutureFeatures
         {
             collection.Append(item);
         }
-    }
-
-    ////////////////////////////////////////////////////////////////////
-    //
-    // private protected has been withdrawn
-    //
-    ////////////////////////////////////////////////////////////////////
-
-    public class VisibilityDemo
-    {
-        // Existing - equivalent to FamORAssem
-        protected internal void Foo()
-        {
-        }
-
-        // PLANNED - equivalent to FamANDAssem
-        //private protected void Bar()
-        //{
-        //}
     }
 }

@@ -47,7 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="02a_ConvenienceFeatures_Planned.cs" />
+    <Compile Include="02a_ConvenienceFeatures_NullPropagation.cs" />
+    <Compile Include="02z_ConvenienceFeatures_Planned.cs" />
     <Compile Include="02_ConvenienceFeatures.cs" />
     <Compile Include="03_Tidying.cs" />
     <Compile Include="Geometry.cs" />
