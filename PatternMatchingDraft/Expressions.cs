@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace PatternMatchingDraft
 {
+    // http://roslyn.codeplex.com/discussions/560339
+
     // NOTE: THIS IS NOT PLANNED FOR C# vNext.  IT MAY NEVER HAPPEN
     // AT ALL.  NOTHING HERE INDICATES MICROSOFT'S INTENT TO INCLUDE
     // THESE FEATURES IN ANY FUTURE VERSION OF THE LANGUAGE.  BUT IT
