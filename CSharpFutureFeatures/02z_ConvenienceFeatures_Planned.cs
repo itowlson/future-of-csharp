@@ -8,6 +8,12 @@ namespace CSharpFutureFeatures
 {
     public static class Planned
     {
+        // PLANNED: digit separators
+        // public const int BlackmailAmount = 1_000_000
+
+        // PLANNED: binary literals
+        // public const int BehaviourFlagsMask = 0b0000_0111_1000_0000;
+
         public static Dictionary<int, double> PrecalculateSines()
         {
             // Before
